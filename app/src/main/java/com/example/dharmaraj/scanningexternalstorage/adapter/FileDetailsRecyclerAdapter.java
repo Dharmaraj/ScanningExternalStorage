@@ -2,7 +2,6 @@ package com.example.dharmaraj.scanningexternalstorage.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +17,9 @@ import java.util.List;
  */
 public class FileDetailsRecyclerAdapter extends RecyclerView.Adapter<FileDetailsRecyclerAdapter.CustomViewHolder> {
     private List<FileDetails> fileDetailsList;
-    private Context context;
 
-    public FileDetailsRecyclerAdapter(Context context, List<FileDetails> fileDetailsList) {
+    public FileDetailsRecyclerAdapter(List<FileDetails> fileDetailsList) {
         this.fileDetailsList = fileDetailsList;
-        this.context = context;
     }
 
     @Override
@@ -42,24 +39,24 @@ public class FileDetailsRecyclerAdapter extends RecyclerView.Adapter<FileDetails
         String frequency = fileDetails.getExtensionFrequencies();
 
         if (fileName != null && fileName.length() > 0) {
-            customViewHolder.fileNameTV.setText(fileName);
+            customViewHolder.fileNameTV.setText((fileName + "  "));
         } else {
-            customViewHolder.fileNameTV.setVisibility(View.GONE);
+            customViewHolder.fileNameTV.setVisibility(View.INVISIBLE);
         }
         if (fileSize != null && fileSize.length() > 0) {
-            customViewHolder.fileSizeTV.setText(fileSize);
+            customViewHolder.fileSizeTV.setText((fileSize + "  "));
         } else {
-            customViewHolder.fileSizeTV.setVisibility(View.GONE);
+            customViewHolder.fileSizeTV.setVisibility(View.INVISIBLE);
         }
         if (extension != null && extension.length() > 0) {
-            customViewHolder.extensionNameTV.setText(extension);
+            customViewHolder.extensionNameTV.setText((extension + "  "));
         } else {
-            customViewHolder.extensionNameTV.setVisibility(View.GONE);
+            customViewHolder.extensionNameTV.setVisibility(View.INVISIBLE);
         }
         if (frequency != null && frequency.length() > 0) {
-            customViewHolder.frequencyTV.setText(frequency);
+            customViewHolder.frequencyTV.setText((frequency));
         } else {
-            customViewHolder.frequencyTV.setVisibility(View.GONE);
+            customViewHolder.frequencyTV.setVisibility(View.INVISIBLE);
         }
     }
 

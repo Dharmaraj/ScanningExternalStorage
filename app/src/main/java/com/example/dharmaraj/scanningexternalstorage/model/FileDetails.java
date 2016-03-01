@@ -9,6 +9,13 @@ public class FileDetails {
     String fileExtension;
     String extensionFrequencies;
 
+    public FileDetails(String fileName, String fileSize, String fileExtension, String extensionFrequencies) {
+        this.fileName = fileName;
+        this.fileSize = fileSize;
+        this.fileExtension = fileExtension;
+        this.extensionFrequencies = extensionFrequencies;
+    }
+
     public String getFileName() {
         return fileName;
     }
